@@ -1,20 +1,27 @@
-# Demo sito Dott. Vincenzo Mazzetti
+# Demo sito Dott. Vincenzo Mazzetti — Pontecorvo
 
-Anteprima dimostrativa realizzata da Dental Go. Il repository contiene un flusso GitHub Actions per compilare e pubblicare il progetto Next.js incluso nello ZIP `mazzetti-demo.zip`.
+Concept dimostrativo Dental Go, **non ancora approvato per l'uso ufficiale**.
 
-## Pubblicazione
+## Stato del progetto
 
-1. Da GitHub, apri **Add file → Upload files** e carica nella radice del ramo `main` il file **`mazzetti-demo.zip`**, senza estrarlo.
-2. Conferma con **Commit changes**. Il caricamento attiva il workflow in `.github/workflows/publish.yml`.
-3. In **Settings → Pages → Build and deployment → Source**, seleziona **GitHub Actions**.
-4. Apri **Actions → Pubblica demo Mazzetti** per verificare che la compilazione e la pubblicazione abbiano successo.
+- Progetto Next.js compilato con successo su GitHub Actions.
+- Sorgenti per la pubblicazione: `mazzetti-demo.zip` (già caricato).
+- Build statica automatizzata tramite `.github/workflows/publish.yml`.
+- **Passaggio da completare:** abilitare GitHub Pages sul repository.
 
-Dopo il deploy il sito è disponibile su:
+## Attivazione del sito (una sola volta)
 
-**https://gsfglobal.github.io/drmazzetti-demo/**
+1. Accedi a [Settings → Pages](https://github.com/gsfglobal/drmazzetti-demo/settings/pages).
+2. In **Build and deployment**, imposta **Source: GitHub Actions** (se non lo è già).
+3. Apri [Actions → Pubblica demo Mazzetti](https://github.com/gsfglobal/drmazzetti-demo/actions/workflows/publish.yml).
+4. Apri l'ultima esecuzione fallita e premi **Re-run all jobs**, oppure avvia **Run workflow** sul ramo `main`.
 
-Il workflow imposta automaticamente `BASE_PATH=/drmazzetti-demo`, aggiorna l'indirizzo nel contenuto, esegue la build Next.js e pubblica `out/`.
+La build è già stata eseguita senza errori; il precedente workflow si è interrotto esclusivamente perché GitHub Pages non era ancora abilitato.
 
-## Avvertenze
+**Sito previsto:** https://gsfglobal.github.io/drmazzetti-demo/
 
-Demo **non approvata** per la pubblicazione ufficiale. Mantiene `demo: true` e `noindex`; il modulo è dimostrativo e non invia dati. È necessario verificare con lo studio orari, recapiti, qualifiche, foto e dati legali. `noindex` non equivale a un accesso privato.
+L'esportazione usa `BASE_PATH=/drmazzetti-demo` e aggiorna l'URL canonico, rispettando il percorso del repository.
+
+## Note per la presentazione
+
+Tutti i contenuti sono presentati come concept; `demo: true` attivo, pagine `noindex`, modulo contatti non operativo. Prima di un uso definitivo occorrono la conferma del medico su dati, recapiti e qualifiche e l'adeguamento delle informative. `noindex` non protegge l'accesso pubblico.
